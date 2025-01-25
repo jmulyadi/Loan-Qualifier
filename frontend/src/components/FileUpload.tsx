@@ -3,50 +3,76 @@ import { useDropzone } from "react-dropzone";
 import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-
+import axios from "axios";
 interface FileUploadProps {
   onUpload: (file: File) => Promise<void>;
   isLoading: boolean;
 }
+const handleUpload = async (file: File) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/upload",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      },
+    );
+
+    console.log("File uploaded successfully:", response.data);
+    //alert("File uploaded successfully!");
+  } catch (error) {
+    console.error("File upload error:", error);
+    alert("Failed to upload file");
+  }
+};
 
 export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
   const [uploadProgress, setUploadProgress] = useState(0);
 
-  const onDrop = useCallback(async (acceptedFiles: File[]) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      // Simulate upload progress
-      const interval = setInterval(() => {
-        setUploadProgress(prev => {
-          if (prev >= 100) {
-            clearInterval(interval);
-            return 100;
-          }
-          return prev + 10;
-        });
-      }, 200);
+  const onDrop = useCallback(
+    async (acceptedFiles: File[]) => {
+      const file = acceptedFiles[0];
+      if (file) {
+        // Simulate upload progress
+        const interval = setInterval(() => {
+          setUploadProgress((prev) => {
+            if (prev >= 100) {
+              clearInterval(interval);
+              return 100;
+            }
+            return prev + 10;
+          });
+        }, 200);
 
-      await onUpload(file);
-      clearInterval(interval);
-      setUploadProgress(0);
-    }
-  }, [onUpload]);
+        await handleUpload(file);
+        await onUpload(file);
+        clearInterval(interval);
+        setUploadProgress(0);
+      }
+    },
+    [onUpload],
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'application/pdf': ['.pdf']
+      "application/pdf": [".pdf"],
     },
     maxFiles: 1,
-    disabled: isLoading
+    disabled: isLoading,
   });
 
   return (
     <div>
       <div
         {...getRootProps()}
-        className={`drop-zone ${isDragActive ? 'active' : ''} ${
-          isLoading ? 'opacity-50 cursor-not-allowed' : ''
+        className={`drop-zone ${isDragActive ? "active" : ""} ${
+          isLoading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         <input {...getInputProps()} />
@@ -75,3 +101,4 @@ export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
     </div>
   );
 };
+
