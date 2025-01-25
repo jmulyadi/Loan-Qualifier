@@ -1,7 +1,12 @@
 # casca
 
 Run
-pip install pdfplumber transformers pandas
 
-The script uses a pre-trained 🤗 Hugging Face model: dbmdz/bert-large-cased-finetuned-conll03-english
+python -m venv env
 
+source env/bin/activate
+
+pip install -r requirements
+
+Then you can run
+python {filename}.py
