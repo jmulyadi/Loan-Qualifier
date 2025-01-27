@@ -22,7 +22,7 @@ const handleUpload = async (file: File) => {
         },
       },
     );
-
+    const data = response.data;
     console.log("File uploaded successfully:", response.data);
     return true;
     //alert("File uploaded successfully!");

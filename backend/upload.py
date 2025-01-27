@@ -1,3 +1,4 @@
+import json
 import os
 
 from combine import *
@@ -43,12 +44,23 @@ def upload_file():
         # make LLM API call
         pdf_to_csv(file.filename)
         combine(f"csv/{file.filename[:-4]}")
+        output = LLM()
+        summary_score_json = get_score(output)
+        data = json.loads(success_score_json)
         return (
-            jsonify({"message": "File uploaded successfully", "file_path": filename}),
+            jsonify(
+                {
+                    "message": f"File uploaded successfully",
+                    "file_path": filename,
+                    "score_summary_json": summary_score_json, 
+                    "data": data
+                }
+            ),
             200,
         )
     else:
         return jsonify({"error": "Invalid file type"}), 400
+@app.route('get_data'):
 
 
 if __name__ == "__main__":

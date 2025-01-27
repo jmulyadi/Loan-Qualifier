@@ -25,7 +25,7 @@ def combine(directory_path):
         file_path = os.path.join(directory_path, f)  # Full file path
         print(f"Reading file: {file_path}")
         # Read the CSV file into a DataFrame
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, on_bad_lines="skip")
         dfs.append(df)  # Append the DataFrame to the list
 
     # Combine all DataFrames into one

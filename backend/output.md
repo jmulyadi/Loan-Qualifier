@@ -1,2 +1,62 @@
-
-ChatCompletionMessage(content="### Bank Statement Analysis Summary for Mr. Chandrakant Yuvraj Bansode\n\n#### 1. Account Balance\n- **Average Monthly Balance (Last 6 Months)**: Data missing but noted fluctuations observed.\n- **End-of-Month Balances (Last 6 months)**:\n  - October 2018: ₹55,105.34\n  - September 2018: ₹7,223.06\n  - August 2018: ₹4,506.32\n  - July 2018: ₹1,670.47\n  - June 2018: ₹199.88\n  - May 2018: ₹3,405.82\n\n#### 2. Income\n- **Total Credited Amounts** (notable monthly entries):\n  - October 2018: ₹55,105.34\n  - September 2018: ₹7,198.00\n  - August 2018: ₹7,198.00\n  - July 2018: ₹9,000.00\n  - June 2018: ₹2,000.00\n  - May 2018: ₹3,405.82\n- **Consistency and Sources of Income**: Regular influx from various payments (salary through IMPS and other transfers).\n\n#### 3. Expenses\n- **Total Debited Amounts** (notable monthly entries):\n  - October 2018: ₹47,800.00 (high expenditure this month)\n  - September 2018: ₹2,000.00\n  - August 2018: ₹4,500.00\n  - July 2018: ₹4,708.00\n- **Major Recurring Expenses**:\n  - Payments to utilities and rent observed through patterns in withdrawals.\n- **Unusual Large One-Time Expenses**: Not observed in the dataset provided.\n\n#### 4. Savings and Investment Behavior\n- **Transfers to Savings Accounts or Investments**: Regular transfers noted in the higher credit months which indicate savings behavior.\n- **Wealth-building Evidence**: Following a few high-credit months suggests a positive trend toward savings.\n\n#### 5. Loan Repayment History\n- **Existing Loans/Credit Card Payments**: Loans being serviced, with visible debit entries to Bajaj Finance as evidenced.\n- **Timeliness and Regularity of Payments**: Maintains regular payments, no flagged delayed payments noted.\n\n#### 6. Overdrafts and Negative Balances\n- **Frequency of Overdraft Usage**: No overdraft usage noted in the provided transaction history.\n- **Duration of Negative Balances, if any**: No negative balances reported in the available data.\n\n#### 7. Transaction Patterns\n- **Cash Deposits and Withdrawals**: Slight irregular patterns with occasional large cash withdrawals.\n- **High-Value Transactions**:\n  - Regular but variable spending observed with numerous entries on medical and essential goods/services.\n\n#### 8. Red Flags\n- No declined transactions or notices for insufficient funds observed in the data. Spending patterns appear typical and do not raise flags for high-risk behavior.\n\n### Observations & Financial Health\n- Mr. Bansode exhibits fluctuations in balances, particularly high in October 2018 followed by substantial spending reductions.\n- Monthly income fluctuates but generally remains above essential expenses with some months showing substantial increases which may indicate seasonal income surges or bonuses.\n- Active management of obligations, as evidenced by regular payments, strengthens his loan repayment profile.\n- General financial behavior indicates a potential for creditworthiness, especially given no border transaction issues or overdrafts.\n\nThis summary encompasses a comprehensive financial overview significant for assessing Mr. Bansode's loan eligibility without rendering a decision.", refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None)
+{
+  "Balance": {
+    "average_monthly_balance": 1922.09,
+    "end_of_month_balances": {
+      "2019-09": 1173.56,
+      "2019-10": 2062.05,
+      "2019-11": 2062.05
+    }
+  },
+  "Income": {
+    "total_credited_amounts": {
+      "2019-09": 300.00,
+      "2019-10": 3370.00,
+      "2019-11": 390.00
+    },
+    "sources_of_income": "Various transfers from cooperative and a few small credit transactions."
+  },
+  "Expenses": {
+    "total_debited_amounts": {
+      "2019-09": 5420.12,
+      "2019-10": 2948.51,
+      "2019-11": 1883.70
+    },
+    "recurring_expenses": [
+      { "description": "Utilities", "amount": 50 },
+      { "description": "Mobile Service", "amount": 50 },
+      { "description": "Subscriptions", "amount": 100 }
+    ],
+    "large_one_time_expenses": [
+      { "description": "Amazon UK Marketplace", "amount": 262.00, "date": "2019-11" },
+      { "description": "KATE EYR G D LTD KEGD", "amount": 960.00, "date": "2019-11" }
+    ]
+  },
+  "Savings": {
+    "savings_transfers": 370.00,
+    "wealth_building_behavior": "Occasional small transfers to savings."
+  },
+  "Repayments": {
+    "existing_loans": [
+      { "lender": "Barclaycard", "amount": 2.50, "due_date": null },
+      { "lender": "Western Villa", "amount": 240.00, "due_date": null }
+    ],
+    "repayment_timeliness": "Payments made regularly."
+  },
+  "Overdrafts": {
+    "overdraft_usage": 0,
+    "negative_balances": null
+  },
+  "Patterns": {
+    "cash_transactions": {
+      "deposits": 370.00,
+      "withdrawals": 13466.91
+    },
+    "high_value_transactions": [
+      { "amount": 960.00, "date": "2019-11", "description": "KATE EYR G D LTD KEGD" }
+    ]
+  },
+  "Red_Flags": {
+    "declined_transactions": 0,
+    "high_risk_behavior": "Frequent small and medium cash withdrawals indicating potential impulsive spending."
+  }
+}
