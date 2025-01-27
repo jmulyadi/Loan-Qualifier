@@ -46,21 +46,20 @@ def upload_file():
         combine(f"csv/{file.filename[:-4]}")
         output = LLM()
         summary_score_json = get_score(output)
-        data = json.loads(success_score_json)
+        data = json.loads(summary_score_json)
         return (
             jsonify(
                 {
                     "message": f"File uploaded successfully",
                     "file_path": filename,
-                    "score_summary_json": summary_score_json, 
-                    "data": data
+                    "score_summary_json": summary_score_json,
+                    "data": data,
                 }
             ),
             200,
         )
     else:
         return jsonify({"error": "Invalid file type"}), 400
-@app.route('get_data'):
 
 
 if __name__ == "__main__":

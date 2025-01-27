@@ -8,31 +8,6 @@ interface FileUploadProps {
   onUpload: (file: File) => Promise<void>;
   isLoading: boolean;
 }
-const handleUpload = async (file: File) => {
-  const formData = new FormData();
-  formData.append("file", file);
-  try {
-    const response = await axios.post(
-      "https://localhost:5000/upload",
-      formData,
-      {
-        headers: {
-          method: "POST",
-          "Content-Type": "multipart/form-data",
-        },
-      },
-    );
-    const data = response.data;
-    console.log("File uploaded successfully:", response.data);
-    return true;
-    //alert("File uploaded successfully!");
-  } catch (error) {
-    console.error("File upload error:", error);
-    alert("Failed to upload file");
-    return false;
-  }
-};
-
 export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
   const [uploadProgress, setUploadProgress] = useState(0);
 
@@ -50,9 +25,7 @@ export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
             return prev + 10;
           });
         }, 200);
-
-        const check = await handleUpload(file);
-        if (check) await onUpload(file);
+        await onUpload(file);
         clearInterval(interval);
         setUploadProgress(0);
       }
