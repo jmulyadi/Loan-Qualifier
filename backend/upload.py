@@ -1,9 +1,11 @@
 import os
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app)
 # Set the upload folder and allowed file extensions
 UPLOAD_FOLDER = "uploads/"
 ALLOWED_EXTENSIONS = {"pdf"}
@@ -44,4 +46,9 @@ def upload_file():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        ssl_context=("/app/certificate.crt", "/app/private.key"),
+        debug=True,
+        host="0.0.0.0",
+        port=5000,
+    )

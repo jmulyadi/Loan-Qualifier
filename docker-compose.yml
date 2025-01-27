@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend # Path to your frontend directory
+    ports:
+      - "3000:3000" # Map frontend container's port 3000 to host machine
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    environment:
+      - VITE_APP_HTTPS=true
+
+  backend:
+    build:
+      context: ./backend # Path to your backend directory
+    ports:
+      - "5000:5000" # Map backend container's port 5000 to host machine
+    networks:
+      - app-network
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+networks:
+  app-network:
+    driver: bridge

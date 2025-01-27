@@ -14,20 +14,23 @@ const handleUpload = async (file: File) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/upload",
+      "https://localhost:5000/upload",
       formData,
       {
         headers: {
+          method: "POST",
           "Content-Type": "multipart/form-data",
         },
       },
     );
 
     console.log("File uploaded successfully:", response.data);
+    return true;
     //alert("File uploaded successfully!");
   } catch (error) {
     console.error("File upload error:", error);
     alert("Failed to upload file");
+    return false;
   }
 };
 
@@ -49,8 +52,8 @@ export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
           });
         }, 200);
 
-        await handleUpload(file);
-        await onUpload(file);
+        const check = await handleUpload(file);
+        if (check) onUpload(file);
         clearInterval(interval);
         setUploadProgress(0);
       }
@@ -101,4 +104,3 @@ export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
     </div>
   );
 };
-

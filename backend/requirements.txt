@@ -2,7 +2,8 @@ python-dotenv
 openai
 numpy
 pandas
-convertapi
-pdfplumber 
-transformers
 flask
+convertapi
+flask-cors
+# pdfplumber 
+# transformers
