@@ -21,6 +21,7 @@ services:
       - app-network
     volumes:
       - ./backend/uploads:/app/uploads
+      - ./backend/csv:/app/csv
 
 networks:
   app-network:

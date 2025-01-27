@@ -4,7 +4,8 @@ import pandas as pd
 from openai import OpenAI
 
 
-def main():
+def LLM():
+
     filename = "combined_output.csv"
     try:
         data = pd.read_csv(filename)

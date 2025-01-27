@@ -1,0 +1,9 @@
+DATE,AMOUNT,1.,List any deposits that do not appear on your statement in the Outstanding Deposits section at
+2.,"Check off in your checkbook register all checks, withdrawals (including Debit Card and ATM)"
+TOTAL,$,should be recorded in the Outstanding Withdrawals section at the left. Record the total.
+3.,Enter the ending balance shown on this statement.,$
+DATE,AMOUNT,4.,Enter the total deposits recorded in the Outstanding Deposits section.,$
+5.,Total lines 3 and 4.,$
+6.,Enter the total withdrawals recorded in the Outstanding Withdrawals section.,$
+7.,Subtract line 6 from line 5. This is your balance.,$
+8.,"Enter in your register and subtract from your register balance any checks, withdrawals or other"

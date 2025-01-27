@@ -1,7 +1,10 @@
 import os
 
+from combine import *
+from convert import *
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from llm import *
 
 app = Flask(__name__)
 
@@ -37,6 +40,9 @@ def upload_file():
         # Secure the filename and save the file
         filename = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
         file.save(filename)
+        # make LLM API call
+        pdf_to_csv(file.filename)
+        combine(f"csv/{file.filename[:-4]}")
         return (
             jsonify({"message": "File uploaded successfully", "file_path": filename}),
             200,
@@ -48,6 +54,7 @@ def upload_file():
 if __name__ == "__main__":
     app.run(
         ssl_context=("/app/certificate.crt", "/app/private.key"),
+        # ssl_context=("../certificate.crt", "../private.key"),
         debug=True,
         host="0.0.0.0",
         port=5000,
