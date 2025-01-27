@@ -11,7 +11,6 @@ interface FileUploadProps {
 const handleUpload = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
-
   try {
     const response = await axios.post(
       "https://localhost:5000/upload",
@@ -53,7 +52,7 @@ export const FileUpload = ({ onUpload, isLoading }: FileUploadProps) => {
         }, 200);
 
         const check = await handleUpload(file);
-        if (check) onUpload(file);
+        if (check) await onUpload(file);
         clearInterval(interval);
         setUploadProgress(0);
       }
