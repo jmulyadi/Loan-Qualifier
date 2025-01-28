@@ -11,6 +11,7 @@ interface AnalysisResult {
   monthlyExpenses: number[];
   balanceTrend: number[];
   months: string[];
+  summary: string;
 }
 
 // Placeholder data for demonstration
@@ -39,6 +40,7 @@ const placeholderResults: AnalysisResult = {
     "Nov",
     "Dec",
   ],
+  summary: "",
 };
 
 const Index = () => {
@@ -61,6 +63,23 @@ const Index = () => {
         },
       );
       const data = response.data;
+      //need to parse data
+      const graph_data = data["graph_data"];
+      const score = data["score_summary_json"]["score"];
+      const summary = data["score_summary_json"]["summary"];
+      //update Results
+      placeholderResults["qualificationScore"] = score;
+      placeholderResults["summary"] = summary;
+      placeholderResults["balanceTrend"] = Object.values(
+        graph_data["Balance"]["end_of_month_balances"],
+      );
+      placeholderResults["monthlyExpenses"] = Object.values(
+        graph_data["Expenses"]["total_debited_amounts"],
+      );
+      placeholderResults["monthlyIncome"] = Object.values(
+        graph_data["Income"]["total_credited_amounts"],
+      );
+      setResults(placeholderResults);
       console.log("File uploaded successfully:", response.data);
       //alert("File uploaded successfully!");
     } catch (error) {
@@ -130,4 +149,3 @@ const Index = () => {
 };
 
 export default Index;
-

@@ -52,8 +52,8 @@ def upload_file():
                 {
                     "message": f"File uploaded successfully",
                     "file_path": filename,
-                    "score_summary_json": summary_score_json,
-                    "data": data,
+                    "score_summary_json": data,
+                    "graph_data": json.loads(output),
                 }
             ),
             200,
