@@ -9,8 +9,8 @@ This project uses Docker to run
 3. Make sure to make private.key and certificate.crt for https
 4. Run these Commands
 
-- docker compose build
-- docker compose run
+  - docker compose build
+  - docker compose run
 
 ---
 
