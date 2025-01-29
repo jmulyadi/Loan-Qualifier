@@ -1,93 +1,85 @@
 {
   "Balance": {
-    "average_monthly_balance": 13047.03,
+    "average_monthly_balance": 920.67,
     "end_of_month_balances": {
-      "2023-10": 10186.67,
-      "2023-09": 10537.00,
-      "2023-08": 13702.00,
-      "2023-07": 15466.00,
-      "2023-06": 12487.00,
-      "2023-05": 11230.00,
-      "2023-04": 13020.00,
-      "2023-03": 14560.00,
-      "2023-02": 10970.00,
-      "2023-01": 12000.00,
-      "2022-12": 12500.00,
-      "2022-11": 14000.00
+      "2023-01": 500.00,
+      "2023-02": 650.00,
+      "2023-03": 800.00,
+      "2023-04": 730.00,
+      "2023-05": 580.00,
+      "2023-06": 450.00,
+      "2023-07": 350.00,
+      "2023-08": 420.00,
+      "2023-09": 500.00,
+      "2023-10": 350.00,
+      "2023-11": 600.00,
+      "2023-12": 400.00
     }
   },
   "Income": {
     "total_credited_amounts": {
-      "2023-10": 12000,
-      "2023-09": 9000,
-      "2023-08": 17000,
-      "2023-07": 18000,
-      "2023-06": 13000,
-      "2023-05": 15000,
-      "2023-04": 14000,
-      "2023-03": 16000,
-      "2023-02": 12000,
-      "2023-01": 16000,
-      "2022-12": 15000,
-      "2022-11": 14000
+      "2023-01": 1500.00,
+      "2023-02": 2000.00,
+      "2023-03": 1800.00,
+      "2023-04": 1700.00,
+      "2023-05": 1600.00,
+      "2023-06": 1200.00,
+      "2023-07": 1300.00,
+      "2023-08": 1100.00,
+      "2023-09": 1500.00,
+      "2023-10": 1400.00,
+      "2023-11": 1600.00,
+      "2023-12": 1500.00
     },
-    "sources_of_income": "Monthly revenue from service contracts and transactions."
+    "sources_of_income": "Primary income from contract work, supplemented by freelance projects."
   },
   "Expenses": {
     "total_debited_amounts": {
-      "2023-10": 19600,
-      "2023-09": 15000,
-      "2023-08": 12000,
-      "2023-07": 13000,
-      "2023-06": 14000,
-      "2023-05": 13000,
-      "2023-04": 12000,
-      "2023-03": 12500,
-      "2023-02": 11000,
-      "2023-01": 11500,
-      "2022-12": 13000,
-      "2022-11": 13500
+      "2023-01": 800.00,
+      "2023-02": 950.00,
+      "2023-03": 900.00,
+      "2023-04": 1100.00,
+      "2023-05": 700.00,
+      "2023-06": 650.00,
+      "2023-07": 600.00,
+      "2023-08": 800.00,
+      "2023-09": 850.00,
+      "2023-10": 900.00,
+      "2023-11": 950.00,
+      "2023-12": 900.00
     },
     "recurring_expenses": [
-      { "description": "Payroll", "amount": 8000 },
-      { "description": "Rent", "amount": 2000 },
-      { "description": "Utilities", "amount": 5000 }
+      { "description": "Rent", "amount": 500.00 },
+      { "description": "Utilities", "amount": 150.00 },
+      { "description": "Internet", "amount": 50.00 }
     ],
     "large_one_time_expenses": [
-      { "description": "Equipment Purchase", "amount": 7000, "date": "2023-06" },
-      { "description": "Vehicle Maintenance", "amount": 5000, "date": "2023-01" }
+      { "description": "Medical expenses", "amount": 1200.00, "date": "2023-06" }
     ]
   },
   "Savings": {
-    "savings_transfers": 6000,
-    "wealth_building_behavior": "Regular savings transfers made on a monthly basis."
+    "savings_transfers": 3000.00,
+    "wealth_building_behavior": "Consistent monthly contributions to savings and investment accounts."
   },
   "Repayments": {
     "existing_loans": [
-      { "lender": "Bank of America", "amount": 10000, "due_date": "2023-11-15" },
-      { "lender": "Wells Fargo", "amount": 5000, "due_date": "2023-12-20" }
+      { "lender": "Bank XYZ", "amount": 1500.00, "due_date": "2023-12-01" }
     ],
-    "repayment_timeliness": "Payments are consistently made on time each month."
+    "repayment_timeliness": "All loan repayments made on time without delay."
   },
   "Overdrafts": {
-    "overdraft_usage": 1,
-    "negative_balances": {
-      "duration": "3 days",
-      "date": "2023-10-15"
-    }
+    "overdraft_usage": 2,
+    "negative_balances": "Two instances in the last 6 months, each for 2-3 days."
   },
   "Patterns": {
-    "cash_transactions": {
-      "deposits": 15000,
-      "withdrawals": 8000
-    },
+    "cash_transactions": { "deposits": 3000.00, "withdrawals": 2000.00 },
     "high_value_transactions": [
-      { "amount": 16000, "date": "2023-09", "description": "Business Equipment" },
-      { "amount": 20000, "date": "2023-10", "description": "Corporate Event Expenses" }
+      { "amount": 1200.00, "date": "2023-06", "description": "Medical expenses" },
+      { "amount": 1500.00, "date": "2023-01", "description": "New laptop purchase" }
     ]
   },
   "Red_Flags": {
-    "declined_transactions": 2,
-    "high_risk_behavior": "Frequent large transfers out without clear documentation."
+    "declined_transactions": 1,
+    "high_risk_behavior": "Frequent smaller overdrafts may indicate cash flow issues."
   }
 }

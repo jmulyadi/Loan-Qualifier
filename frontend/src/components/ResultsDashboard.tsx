@@ -68,11 +68,11 @@ export const ResultsDashboard = ({
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="p-6">
+          <Card className="p-6 flex flex-col items-center">
             <h3 className="text-lg font-medium mb-4 text-center">
               Qualification Score
             </h3>
-            <div className="flex items-center justify-center h-32">
+            <div className="flex items-center justify-center h-[300px]">
               <div className="">
                 {" "}
                 {/* Set a fixed width and height for the container */}
