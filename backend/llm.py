@@ -55,15 +55,15 @@ Your output must strictly adhere to valid JSON format, organized into the follow
     - "repayment_timeliness": A brief description of timeliness and regularity of payments.
 
 6. **Overdrafts**:
-    - "overdraft_usage": Frequency of overdraft usage over the past 3-6 months.
+    - "overdraft_usage": Frequency of overdraft usage over the past 12 months.
     - "negative_balances": Duration of any negative balances, if applicable.
 
 7. **Patterns**:
-    - "cash_transactions": { "deposits": Total cash deposits, "withdrawals": Total cash withdrawals over the past 3-6 months }.
+    - "cash_transactions": { "deposits": Total cash deposits, "withdrawals": Total cash withdrawals over the past 12 months }.
     - "high_value_transactions": A list of high-value transactions with dates and amounts.
 
 8. **Red_Flags**:
-    - "declined_transactions": Count of declined transactions over the past 3-6 months.
+    - "declined_transactions": Count of declined transactions over the past 12 months.
     - "high_risk_behavior": A brief description of high-risk spending behavior, if any.
 ### Example output
 {
